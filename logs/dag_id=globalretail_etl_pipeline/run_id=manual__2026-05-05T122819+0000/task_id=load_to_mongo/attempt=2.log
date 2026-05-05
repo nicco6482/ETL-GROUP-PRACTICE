@@ -1,0 +1,44 @@
+[2026-05-05T12:34:02.762+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-05T12:34:02.788+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalretail_etl_pipeline.load_to_mongo manual__2026-05-05T12:28:19+00:00 [queued]>
+[2026-05-05T12:34:02.796+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalretail_etl_pipeline.load_to_mongo manual__2026-05-05T12:28:19+00:00 [queued]>
+[2026-05-05T12:34:02.796+0000] {taskinstance.py:2303} INFO - Starting attempt 2 of 2
+[2026-05-05T12:34:02.808+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_to_mongo> on 2026-05-05 12:28:19+00:00
+[2026-05-05T12:34:02.819+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalretail_etl_pipeline', 'load_to_mongo', 'manual__2026-05-05T12:28:19+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/globalretail_etl_dag.py', '--cfg-path', '/tmp/tmp8mnf0x33']
+[2026-05-05T12:34:02.822+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1460) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-05T12:34:02.823+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask load_to_mongo
+[2026-05-05T12:34:02.823+0000] {standard_task_runner.py:63} INFO - Started process 1462 to run task
+[2026-05-05T12:34:02.889+0000] {task_command.py:426} INFO - Running <TaskInstance: globalretail_etl_pipeline.load_to_mongo manual__2026-05-05T12:28:19+00:00 [running]> on host f4241225583d
+[2026-05-05T12:34:02.967+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='globalretail_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2026-05-05T12:28:19+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-05T12:28:19+00:00'
+[2026-05-05T12:34:02.968+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-05T12:34:02.986+0000] {globalretail_etl_dag.py:338} INFO - ================================================================
+[2026-05-05T12:34:02.987+0000] {globalretail_etl_dag.py:339} INFO - LOAD     started at 2026-05-05T12:34:02.987507
+[2026-05-05T12:34:02.988+0000] {globalretail_etl_dag.py:340} INFO - ================================================================
+[2026-05-05T12:34:04.616+0000] {globalretail_etl_dag.py:344} INFO - Records to load: 805549
+[2026-05-05T12:34:13.521+0000] {globalretail_etl_dag.py:376} INFO - Indexes ensured.
+[2026-05-05T12:34:13.522+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-05T12:34:13.523+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/globalretail_etl_dag.py", line 390, in load_to_mongo
+    filter={"_id": rec["_id"]},
+                   ~~~^^^^^^^
+KeyError: '_id'
+[2026-05-05T12:34:13.536+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=globalretail_etl_pipeline, task_id=load_to_mongo, execution_date=20260505T122819, start_date=20260505T123402, end_date=20260505T123413
+[2026-05-05T12:34:13.551+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 10 for task load_to_mongo ('_id'; 1462)
+[2026-05-05T12:34:13.716+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-05T12:34:13.729+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-05T12:34:13.732+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

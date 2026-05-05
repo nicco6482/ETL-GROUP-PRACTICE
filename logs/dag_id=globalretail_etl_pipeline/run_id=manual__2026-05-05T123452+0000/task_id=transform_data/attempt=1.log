@@ -1,0 +1,25 @@
+[2026-05-05T12:34:59.489+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-05T12:34:59.513+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalretail_etl_pipeline.transform_data manual__2026-05-05T12:34:52+00:00 [queued]>
+[2026-05-05T12:34:59.520+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalretail_etl_pipeline.transform_data manual__2026-05-05T12:34:52+00:00 [queued]>
+[2026-05-05T12:34:59.520+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-05-05T12:34:59.531+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): transform_data> on 2026-05-05 12:34:52+00:00
+[2026-05-05T12:34:59.540+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalretail_etl_pipeline', 'transform_data', 'manual__2026-05-05T12:34:52+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/globalretail_etl_dag.py', '--cfg-path', '/tmp/tmpoucm195l']
+[2026-05-05T12:34:59.543+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask transform_data
+[2026-05-05T12:34:59.543+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1535) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-05T12:34:59.544+0000] {standard_task_runner.py:63} INFO - Started process 1537 to run task
+[2026-05-05T12:34:59.598+0000] {task_command.py:426} INFO - Running <TaskInstance: globalretail_etl_pipeline.transform_data manual__2026-05-05T12:34:52+00:00 [running]> on host f4241225583d
+[2026-05-05T12:34:59.668+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='globalretail_etl_pipeline' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2026-05-05T12:34:52+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-05T12:34:52+00:00'
+[2026-05-05T12:34:59.669+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-05T12:34:59.679+0000] {globalretail_etl_dag.py:212} INFO - ================================================================
+[2026-05-05T12:34:59.679+0000] {globalretail_etl_dag.py:213} INFO - TRANSFORM started at 2026-05-05T12:34:59.679802
+[2026-05-05T12:34:59.680+0000] {globalretail_etl_dag.py:214} INFO - ================================================================
+[2026-05-05T12:35:00.270+0000] {globalretail_etl_dag.py:224} INFO - Records received for transformation: 1067371
+[2026-05-05T12:35:01.664+0000] {globalretail_etl_dag.py:244} INFO - After cleaning: 805549 rows (dropped 261822)
+[2026-05-05T12:35:03.392+0000] {globalretail_etl_dag.py:281} WARNING - Unmatched countries (4): ['unspecified', 'west indies', 'korea', 'european community']
+[2026-05-05T12:35:19.126+0000] {globalretail_etl_dag.py:316} INFO - TRANSFORM finished in 19.4s | ready=805549 | max_date=2011-12-09 12:50:00
+[2026-05-05T12:35:19.238+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-05-05T12:35:19.240+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-05T12:35:19.251+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=globalretail_etl_pipeline, task_id=transform_data, execution_date=20260505T123452, start_date=20260505T123459, end_date=20260505T123519
+[2026-05-05T12:35:19.283+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-05T12:35:19.305+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-05T12:35:19.309+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

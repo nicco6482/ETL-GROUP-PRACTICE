@@ -1,0 +1,10 @@
+# Runtime dependencies — injected into Airflow containers via _PIP_ADDITIONAL_REQUIREMENTS
+pymongo[srv]==4.6.3
+pandas==2.1.4
+requests==2.31.0
+dnspython==2.6.1
+numpy==1.26.4
+openpyxl==3.1.2
+
+# Local dev / standalone scripts only
+# apache-airflow==2.9.0

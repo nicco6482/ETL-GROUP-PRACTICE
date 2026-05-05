@@ -1,0 +1,273 @@
+[2026-05-05T12:35:21.016+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-05T12:35:21.045+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: globalretail_etl_pipeline.load_to_mongo manual__2026-05-05T12:34:52+00:00 [queued]>
+[2026-05-05T12:35:21.054+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: globalretail_etl_pipeline.load_to_mongo manual__2026-05-05T12:34:52+00:00 [queued]>
+[2026-05-05T12:35:21.054+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-05-05T12:35:21.068+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_to_mongo> on 2026-05-05 12:34:52+00:00
+[2026-05-05T12:35:21.081+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1563) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-05T12:35:21.079+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'globalretail_etl_pipeline', 'load_to_mongo', 'manual__2026-05-05T12:34:52+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/globalretail_etl_dag.py', '--cfg-path', '/tmp/tmpgt836lv5']
+[2026-05-05T12:35:21.082+0000] {standard_task_runner.py:63} INFO - Started process 1565 to run task
+[2026-05-05T12:35:21.083+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask load_to_mongo
+[2026-05-05T12:35:21.161+0000] {task_command.py:426} INFO - Running <TaskInstance: globalretail_etl_pipeline.load_to_mongo manual__2026-05-05T12:34:52+00:00 [running]> on host f4241225583d
+[2026-05-05T12:35:21.246+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='globalretail_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2026-05-05T12:34:52+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-05T12:34:52+00:00'
+[2026-05-05T12:35:21.247+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-05T12:35:21.258+0000] {globalretail_etl_dag.py:338} INFO - ================================================================
+[2026-05-05T12:35:21.259+0000] {globalretail_etl_dag.py:339} INFO - LOAD     started at 2026-05-05T12:35:21.259577
+[2026-05-05T12:35:21.259+0000] {globalretail_etl_dag.py:340} INFO - ================================================================
+[2026-05-05T12:35:22.799+0000] {globalretail_etl_dag.py:344} INFO - Records to load: 805549
+[2026-05-05T12:35:35.221+0000] {globalretail_etl_dag.py:375} INFO - Indexes ensured.
+[2026-05-05T12:35:38.712+0000] {globalretail_etl_dag.py:399} INFO - Batch 1/806 → inserted=972  skipped(dup)=28
+[2026-05-05T12:35:42.860+0000] {globalretail_etl_dag.py:399} INFO - Batch 2/806 → inserted=996  skipped(dup)=4
+[2026-05-05T12:35:44.839+0000] {globalretail_etl_dag.py:399} INFO - Batch 3/806 → inserted=976  skipped(dup)=24
+[2026-05-05T12:35:47.757+0000] {globalretail_etl_dag.py:399} INFO - Batch 4/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:35:51.136+0000] {globalretail_etl_dag.py:399} INFO - Batch 5/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:35:55.041+0000] {globalretail_etl_dag.py:399} INFO - Batch 6/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:35:57.955+0000] {globalretail_etl_dag.py:399} INFO - Batch 7/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:36:00.709+0000] {globalretail_etl_dag.py:399} INFO - Batch 8/806 → inserted=980  skipped(dup)=20
+[2026-05-05T12:36:03.824+0000] {globalretail_etl_dag.py:399} INFO - Batch 9/806 → inserted=971  skipped(dup)=29
+[2026-05-05T12:36:06.948+0000] {globalretail_etl_dag.py:399} INFO - Batch 10/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:36:09.786+0000] {globalretail_etl_dag.py:399} INFO - Batch 11/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:36:12.956+0000] {globalretail_etl_dag.py:399} INFO - Batch 12/806 → inserted=985  skipped(dup)=15
+[2026-05-05T12:36:16.067+0000] {globalretail_etl_dag.py:399} INFO - Batch 13/806 → inserted=987  skipped(dup)=13
+[2026-05-05T12:36:20.216+0000] {globalretail_etl_dag.py:399} INFO - Batch 14/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:36:23.308+0000] {globalretail_etl_dag.py:399} INFO - Batch 15/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:36:26.139+0000] {globalretail_etl_dag.py:399} INFO - Batch 16/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:36:29.186+0000] {globalretail_etl_dag.py:399} INFO - Batch 17/806 → inserted=972  skipped(dup)=28
+[2026-05-05T12:36:33.267+0000] {globalretail_etl_dag.py:399} INFO - Batch 18/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:36:37.211+0000] {globalretail_etl_dag.py:399} INFO - Batch 19/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:36:38.399+0000] {globalretail_etl_dag.py:399} INFO - Batch 20/806 → inserted=977  skipped(dup)=23
+[2026-05-05T12:36:40.743+0000] {globalretail_etl_dag.py:399} INFO - Batch 21/806 → inserted=978  skipped(dup)=22
+[2026-05-05T12:36:44.383+0000] {globalretail_etl_dag.py:399} INFO - Batch 22/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:36:47.333+0000] {globalretail_etl_dag.py:399} INFO - Batch 23/806 → inserted=974  skipped(dup)=26
+[2026-05-05T12:36:48.454+0000] {globalretail_etl_dag.py:399} INFO - Batch 24/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:36:52.410+0000] {globalretail_etl_dag.py:399} INFO - Batch 25/806 → inserted=990  skipped(dup)=10
+[2026-05-05T12:36:55.365+0000] {globalretail_etl_dag.py:399} INFO - Batch 26/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:36:58.342+0000] {globalretail_etl_dag.py:399} INFO - Batch 27/806 → inserted=974  skipped(dup)=26
+[2026-05-05T12:37:01.154+0000] {globalretail_etl_dag.py:399} INFO - Batch 28/806 → inserted=973  skipped(dup)=27
+[2026-05-05T12:37:03.242+0000] {globalretail_etl_dag.py:399} INFO - Batch 29/806 → inserted=995  skipped(dup)=5
+[2026-05-05T12:37:04.282+0000] {globalretail_etl_dag.py:399} INFO - Batch 30/806 → inserted=983  skipped(dup)=17
+[2026-05-05T12:37:05.138+0000] {globalretail_etl_dag.py:399} INFO - Batch 31/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:37:06.297+0000] {globalretail_etl_dag.py:399} INFO - Batch 32/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:37:07.379+0000] {globalretail_etl_dag.py:399} INFO - Batch 33/806 → inserted=990  skipped(dup)=10
+[2026-05-05T12:37:09.287+0000] {globalretail_etl_dag.py:399} INFO - Batch 34/806 → inserted=991  skipped(dup)=9
+[2026-05-05T12:37:10.413+0000] {globalretail_etl_dag.py:399} INFO - Batch 35/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:37:12.547+0000] {globalretail_etl_dag.py:399} INFO - Batch 36/806 → inserted=995  skipped(dup)=5
+[2026-05-05T12:37:14.411+0000] {globalretail_etl_dag.py:399} INFO - Batch 37/806 → inserted=971  skipped(dup)=29
+[2026-05-05T12:37:16.508+0000] {globalretail_etl_dag.py:399} INFO - Batch 38/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:37:20.570+0000] {globalretail_etl_dag.py:399} INFO - Batch 39/806 → inserted=978  skipped(dup)=22
+[2026-05-05T12:37:24.766+0000] {globalretail_etl_dag.py:399} INFO - Batch 40/806 → inserted=979  skipped(dup)=21
+[2026-05-05T12:37:28.514+0000] {globalretail_etl_dag.py:399} INFO - Batch 41/806 → inserted=983  skipped(dup)=17
+[2026-05-05T12:37:32.356+0000] {globalretail_etl_dag.py:399} INFO - Batch 42/806 → inserted=976  skipped(dup)=24
+[2026-05-05T12:37:36.217+0000] {globalretail_etl_dag.py:399} INFO - Batch 43/806 → inserted=977  skipped(dup)=23
+[2026-05-05T12:37:39.196+0000] {globalretail_etl_dag.py:399} INFO - Batch 44/806 → inserted=997  skipped(dup)=3
+[2026-05-05T12:37:42.551+0000] {globalretail_etl_dag.py:399} INFO - Batch 45/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:37:44.458+0000] {globalretail_etl_dag.py:399} INFO - Batch 46/806 → inserted=969  skipped(dup)=31
+[2026-05-05T12:37:47.793+0000] {globalretail_etl_dag.py:399} INFO - Batch 47/806 → inserted=991  skipped(dup)=9
+[2026-05-05T12:37:49.976+0000] {globalretail_etl_dag.py:399} INFO - Batch 48/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:37:51.591+0000] {globalretail_etl_dag.py:399} INFO - Batch 49/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:37:55.525+0000] {globalretail_etl_dag.py:399} INFO - Batch 50/806 → inserted=993  skipped(dup)=7
+[2026-05-05T12:37:58.494+0000] {globalretail_etl_dag.py:399} INFO - Batch 51/806 → inserted=997  skipped(dup)=3
+[2026-05-05T12:38:01.751+0000] {globalretail_etl_dag.py:399} INFO - Batch 52/806 → inserted=976  skipped(dup)=24
+[2026-05-05T12:38:03.586+0000] {globalretail_etl_dag.py:399} INFO - Batch 53/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:38:04.409+0000] {globalretail_etl_dag.py:399} INFO - Batch 54/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:38:06.466+0000] {globalretail_etl_dag.py:399} INFO - Batch 55/806 → inserted=970  skipped(dup)=30
+[2026-05-05T12:38:09.532+0000] {globalretail_etl_dag.py:399} INFO - Batch 56/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:38:12.557+0000] {globalretail_etl_dag.py:399} INFO - Batch 57/806 → inserted=980  skipped(dup)=20
+[2026-05-05T12:38:15.850+0000] {globalretail_etl_dag.py:399} INFO - Batch 58/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:38:18.790+0000] {globalretail_etl_dag.py:399} INFO - Batch 59/806 → inserted=981  skipped(dup)=19
+[2026-05-05T12:38:21.994+0000] {globalretail_etl_dag.py:399} INFO - Batch 60/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:38:25.600+0000] {globalretail_etl_dag.py:399} INFO - Batch 61/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:38:28.656+0000] {globalretail_etl_dag.py:399} INFO - Batch 62/806 → inserted=993  skipped(dup)=7
+[2026-05-05T12:38:31.662+0000] {globalretail_etl_dag.py:399} INFO - Batch 63/806 → inserted=975  skipped(dup)=25
+[2026-05-05T12:38:34.706+0000] {globalretail_etl_dag.py:399} INFO - Batch 64/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:38:36.552+0000] {globalretail_etl_dag.py:399} INFO - Batch 65/806 → inserted=993  skipped(dup)=7
+[2026-05-05T12:38:37.473+0000] {globalretail_etl_dag.py:399} INFO - Batch 66/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:38:38.734+0000] {globalretail_etl_dag.py:399} INFO - Batch 67/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:38:39.471+0000] {globalretail_etl_dag.py:399} INFO - Batch 68/806 → inserted=976  skipped(dup)=24
+[2026-05-05T12:38:43.684+0000] {globalretail_etl_dag.py:399} INFO - Batch 69/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:38:46.848+0000] {globalretail_etl_dag.py:399} INFO - Batch 70/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:38:49.690+0000] {globalretail_etl_dag.py:399} INFO - Batch 71/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:38:52.667+0000] {globalretail_etl_dag.py:399} INFO - Batch 72/806 → inserted=991  skipped(dup)=9
+[2026-05-05T12:38:55.540+0000] {globalretail_etl_dag.py:399} INFO - Batch 73/806 → inserted=996  skipped(dup)=4
+[2026-05-05T12:38:58.691+0000] {globalretail_etl_dag.py:399} INFO - Batch 74/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:39:00.637+0000] {globalretail_etl_dag.py:399} INFO - Batch 75/806 → inserted=996  skipped(dup)=4
+[2026-05-05T12:39:01.805+0000] {globalretail_etl_dag.py:399} INFO - Batch 76/806 → inserted=967  skipped(dup)=33
+[2026-05-05T12:39:05.660+0000] {globalretail_etl_dag.py:399} INFO - Batch 77/806 → inserted=991  skipped(dup)=9
+[2026-05-05T12:39:08.674+0000] {globalretail_etl_dag.py:399} INFO - Batch 78/806 → inserted=990  skipped(dup)=10
+[2026-05-05T12:39:11.659+0000] {globalretail_etl_dag.py:399} INFO - Batch 79/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:39:13.741+0000] {globalretail_etl_dag.py:399} INFO - Batch 80/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:39:14.812+0000] {globalretail_etl_dag.py:399} INFO - Batch 81/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:39:15.685+0000] {globalretail_etl_dag.py:399} INFO - Batch 82/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:39:16.756+0000] {globalretail_etl_dag.py:399} INFO - Batch 83/806 → inserted=979  skipped(dup)=21
+[2026-05-05T12:39:17.984+0000] {globalretail_etl_dag.py:399} INFO - Batch 84/806 → inserted=969  skipped(dup)=31
+[2026-05-05T12:39:19.682+0000] {globalretail_etl_dag.py:399} INFO - Batch 85/806 → inserted=998  skipped(dup)=2
+[2026-05-05T12:39:21.550+0000] {globalretail_etl_dag.py:399} INFO - Batch 86/806 → inserted=996  skipped(dup)=4
+[2026-05-05T12:39:22.903+0000] {globalretail_etl_dag.py:399} INFO - Batch 87/806 → inserted=985  skipped(dup)=15
+[2026-05-05T12:39:24.153+0000] {globalretail_etl_dag.py:399} INFO - Batch 88/806 → inserted=985  skipped(dup)=15
+[2026-05-05T12:39:26.048+0000] {globalretail_etl_dag.py:399} INFO - Batch 89/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:39:27.720+0000] {globalretail_etl_dag.py:399} INFO - Batch 90/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:39:28.756+0000] {globalretail_etl_dag.py:399} INFO - Batch 91/806 → inserted=975  skipped(dup)=25
+[2026-05-05T12:39:30.103+0000] {globalretail_etl_dag.py:399} INFO - Batch 92/806 → inserted=987  skipped(dup)=13
+[2026-05-05T12:39:31.664+0000] {globalretail_etl_dag.py:399} INFO - Batch 93/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:39:33.516+0000] {globalretail_etl_dag.py:399} INFO - Batch 94/806 → inserted=977  skipped(dup)=23
+[2026-05-05T12:39:35.417+0000] {globalretail_etl_dag.py:399} INFO - Batch 95/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:39:38.581+0000] {globalretail_etl_dag.py:399} INFO - Batch 96/806 → inserted=964  skipped(dup)=36
+[2026-05-05T12:39:42.154+0000] {globalretail_etl_dag.py:399} INFO - Batch 97/806 → inserted=972  skipped(dup)=28
+[2026-05-05T12:39:45.948+0000] {globalretail_etl_dag.py:399} INFO - Batch 98/806 → inserted=980  skipped(dup)=20
+[2026-05-05T12:39:49.003+0000] {globalretail_etl_dag.py:399} INFO - Batch 99/806 → inserted=990  skipped(dup)=10
+[2026-05-05T12:39:52.018+0000] {globalretail_etl_dag.py:399} INFO - Batch 100/806 → inserted=984  skipped(dup)=16
+[2026-05-05T12:39:54.999+0000] {globalretail_etl_dag.py:399} INFO - Batch 101/806 → inserted=980  skipped(dup)=20
+[2026-05-05T12:39:58.033+0000] {globalretail_etl_dag.py:399} INFO - Batch 102/806 → inserted=975  skipped(dup)=25
+[2026-05-05T12:40:01.396+0000] {globalretail_etl_dag.py:399} INFO - Batch 103/806 → inserted=985  skipped(dup)=15
+[2026-05-05T12:40:05.691+0000] {globalretail_etl_dag.py:399} INFO - Batch 104/806 → inserted=977  skipped(dup)=23
+[2026-05-05T12:40:09.747+0000] {globalretail_etl_dag.py:399} INFO - Batch 105/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:40:13.585+0000] {globalretail_etl_dag.py:399} INFO - Batch 106/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:40:16.651+0000] {globalretail_etl_dag.py:399} INFO - Batch 107/806 → inserted=990  skipped(dup)=10
+[2026-05-05T12:40:20.228+0000] {globalretail_etl_dag.py:399} INFO - Batch 108/806 → inserted=978  skipped(dup)=22
+[2026-05-05T12:40:24.261+0000] {globalretail_etl_dag.py:399} INFO - Batch 109/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:40:28.074+0000] {globalretail_etl_dag.py:399} INFO - Batch 110/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:40:31.110+0000] {globalretail_etl_dag.py:399} INFO - Batch 111/806 → inserted=975  skipped(dup)=25
+[2026-05-05T12:40:33.971+0000] {globalretail_etl_dag.py:399} INFO - Batch 112/806 → inserted=996  skipped(dup)=4
+[2026-05-05T12:40:37.122+0000] {globalretail_etl_dag.py:399} INFO - Batch 113/806 → inserted=987  skipped(dup)=13
+[2026-05-05T12:40:40.498+0000] {globalretail_etl_dag.py:399} INFO - Batch 114/806 → inserted=980  skipped(dup)=20
+[2026-05-05T12:40:44.556+0000] {globalretail_etl_dag.py:399} INFO - Batch 115/806 → inserted=973  skipped(dup)=27
+[2026-05-05T12:40:47.462+0000] {globalretail_etl_dag.py:399} INFO - Batch 116/806 → inserted=979  skipped(dup)=21
+[2026-05-05T12:40:50.665+0000] {globalretail_etl_dag.py:399} INFO - Batch 117/806 → inserted=983  skipped(dup)=17
+[2026-05-05T12:40:53.575+0000] {globalretail_etl_dag.py:399} INFO - Batch 118/806 → inserted=980  skipped(dup)=20
+[2026-05-05T12:40:56.460+0000] {globalretail_etl_dag.py:399} INFO - Batch 119/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:40:59.511+0000] {globalretail_etl_dag.py:399} INFO - Batch 120/806 → inserted=987  skipped(dup)=13
+[2026-05-05T12:41:01.474+0000] {globalretail_etl_dag.py:399} INFO - Batch 121/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:41:02.444+0000] {globalretail_etl_dag.py:399} INFO - Batch 122/806 → inserted=987  skipped(dup)=13
+[2026-05-05T12:41:06.431+0000] {globalretail_etl_dag.py:399} INFO - Batch 123/806 → inserted=991  skipped(dup)=9
+[2026-05-05T12:41:09.496+0000] {globalretail_etl_dag.py:399} INFO - Batch 124/806 → inserted=976  skipped(dup)=24
+[2026-05-05T12:41:12.563+0000] {globalretail_etl_dag.py:399} INFO - Batch 125/806 → inserted=990  skipped(dup)=10
+[2026-05-05T12:41:14.640+0000] {globalretail_etl_dag.py:399} INFO - Batch 126/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:41:18.708+0000] {globalretail_etl_dag.py:399} INFO - Batch 127/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:41:22.974+0000] {globalretail_etl_dag.py:399} INFO - Batch 128/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:41:26.727+0000] {globalretail_etl_dag.py:399} INFO - Batch 129/806 → inserted=977  skipped(dup)=23
+[2026-05-05T12:41:29.611+0000] {globalretail_etl_dag.py:399} INFO - Batch 130/806 → inserted=983  skipped(dup)=17
+[2026-05-05T12:41:32.991+0000] {globalretail_etl_dag.py:399} INFO - Batch 131/806 → inserted=989  skipped(dup)=11
+[2026-05-05T12:41:36.126+0000] {globalretail_etl_dag.py:399} INFO - Batch 132/806 → inserted=993  skipped(dup)=7
+[2026-05-05T12:41:40.059+0000] {globalretail_etl_dag.py:399} INFO - Batch 133/806 → inserted=983  skipped(dup)=17
+[2026-05-05T12:41:44.053+0000] {globalretail_etl_dag.py:399} INFO - Batch 134/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:41:47.042+0000] {globalretail_etl_dag.py:399} INFO - Batch 135/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:41:50.036+0000] {globalretail_etl_dag.py:399} INFO - Batch 136/806 → inserted=993  skipped(dup)=7
+[2026-05-05T12:41:53.471+0000] {globalretail_etl_dag.py:399} INFO - Batch 137/806 → inserted=987  skipped(dup)=13
+[2026-05-05T12:41:57.432+0000] {globalretail_etl_dag.py:399} INFO - Batch 138/806 → inserted=993  skipped(dup)=7
+[2026-05-05T12:42:01.402+0000] {globalretail_etl_dag.py:399} INFO - Batch 139/806 → inserted=991  skipped(dup)=9
+[2026-05-05T12:42:04.449+0000] {globalretail_etl_dag.py:399} INFO - Batch 140/806 → inserted=996  skipped(dup)=4
+[2026-05-05T12:42:08.413+0000] {globalretail_etl_dag.py:399} INFO - Batch 141/806 → inserted=983  skipped(dup)=17
+[2026-05-05T12:42:11.480+0000] {globalretail_etl_dag.py:399} INFO - Batch 142/806 → inserted=970  skipped(dup)=30
+[2026-05-05T12:42:14.719+0000] {globalretail_etl_dag.py:399} INFO - Batch 143/806 → inserted=971  skipped(dup)=29
+[2026-05-05T12:42:18.721+0000] {globalretail_etl_dag.py:399} INFO - Batch 144/806 → inserted=998  skipped(dup)=2
+[2026-05-05T12:42:21.775+0000] {globalretail_etl_dag.py:399} INFO - Batch 145/806 → inserted=985  skipped(dup)=15
+[2026-05-05T12:42:24.695+0000] {globalretail_etl_dag.py:399} INFO - Batch 146/806 → inserted=988  skipped(dup)=12
+[2026-05-05T12:42:28.562+0000] {globalretail_etl_dag.py:399} INFO - Batch 147/806 → inserted=994  skipped(dup)=6
+[2026-05-05T12:42:31.507+0000] {globalretail_etl_dag.py:399} INFO - Batch 148/806 → inserted=992  skipped(dup)=8
+[2026-05-05T12:42:34.606+0000] {globalretail_etl_dag.py:399} INFO - Batch 149/806 → inserted=985  skipped(dup)=15
+[2026-05-05T12:42:37.587+0000] {globalretail_etl_dag.py:399} INFO - Batch 150/806 → inserted=981  skipped(dup)=19
+[2026-05-05T12:42:40.692+0000] {globalretail_etl_dag.py:399} INFO - Batch 151/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:42:44.887+0000] {globalretail_etl_dag.py:399} INFO - Batch 152/806 → inserted=978  skipped(dup)=22
+[2026-05-05T12:42:48.008+0000] {globalretail_etl_dag.py:399} INFO - Batch 153/806 → inserted=978  skipped(dup)=22
+[2026-05-05T12:42:51.944+0000] {globalretail_etl_dag.py:399} INFO - Batch 154/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:42:55.313+0000] {globalretail_etl_dag.py:399} INFO - Batch 155/806 → inserted=987  skipped(dup)=13
+[2026-05-05T12:43:00.008+0000] {globalretail_etl_dag.py:399} INFO - Batch 156/806 → inserted=982  skipped(dup)=18
+[2026-05-05T12:43:04.887+0000] {globalretail_etl_dag.py:399} INFO - Batch 157/806 → inserted=969  skipped(dup)=31
+[2026-05-05T12:43:09.135+0000] {globalretail_etl_dag.py:399} INFO - Batch 158/806 → inserted=996  skipped(dup)=4
+[2026-05-05T12:43:11.499+0000] {globalretail_etl_dag.py:399} INFO - Batch 159/806 → inserted=986  skipped(dup)=14
+[2026-05-05T12:43:15.651+0000] {globalretail_etl_dag.py:399} INFO - Batch 160/806 → inserted=992  skipped(dup)=8
+[2026-05-05T13:01:27.446+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-05T13:01:27.448+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/pool.py", line 1020, in receive_message
+    return receive_message(self, request_id, self.max_message_size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/network.py", line 277, in receive_message
+    data = _receive_data_on_socket(conn, length - 16, deadline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/network.py", line 348, in _receive_data_on_socket
+    raise OSError("connection closed")
+OSError: connection closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/globalretail_etl_dag.py", line 396, in load_to_mongo
+    res = col.bulk_write(ops, ordered=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/_csot.py", line 107, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/collection.py", line 569, in bulk_write
+    bulk_api_result = blk.execute(write_concern, session)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/bulk.py", line 576, in execute
+    return self.execute_command(generator, write_concern, session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/bulk.py", line 443, in execute_command
+    client._retryable_write(self.is_retryable, retryable_bulk, session, bulk=self)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/mongo_client.py", line 1523, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/mongo_client.py", line 1421, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/_csot.py", line 107, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/mongo_client.py", line 1462, in _retry_internal
+    ).run()
+      ^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/mongo_client.py", line 2320, in run
+    self._check_last_error()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/mongo_client.py", line 2392, in _check_last_error
+    raise self._last_error
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/mongo_client.py", line 2315, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/mongo_client.py", line 2423, in _write
+    return self._func(self._session, conn, self._retryable)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/bulk.py", line 432, in retryable_bulk
+    self._execute_command(
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/bulk.py", line 378, in _execute_command
+    result, to_send = bwc.execute(cmd, ops, client)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/message.py", line 964, in execute
+    result = self.write_command(cmd, request_id, msg, to_send)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/helpers.py", line 322, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/message.py", line 1058, in write_command
+    reply = self.conn.write_command(request_id, msg, self.codec)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/pool.py", line 1056, in write_command
+    reply = self.receive_message(request_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/pool.py", line 1022, in receive_message
+    self._raise_connection_failure(error)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/pool.py", line 1171, in _raise_connection_failure
+    _raise_connection_failure(self.address, error, timeout_details=details)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pymongo/pool.py", line 411, in _raise_connection_failure
+    raise AutoReconnect(msg) from error
+pymongo.errors.AutoReconnect: ac-lydpmuh-shard-00-01.mjcvj4z.mongodb.net:27017: connection closed (configured timeouts: connectTimeoutMS: 20000.0ms)
+[2026-05-05T13:01:27.651+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=globalretail_etl_pipeline, task_id=load_to_mongo, execution_date=20260505T123452, start_date=20260505T123521, end_date=20260505T130127
+[2026-05-05T13:01:27.666+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 13 for task load_to_mongo (ac-lydpmuh-shard-00-01.mjcvj4z.mongodb.net:27017: connection closed (configured timeouts: connectTimeoutMS: 20000.0ms); 1565)
+[2026-05-05T13:01:27.868+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-05T13:01:27.889+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-05T13:01:27.893+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

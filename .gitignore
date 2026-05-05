@@ -1,0 +1,36 @@
+# Large data files
+data/online_retail.csv
+data/tmp/transformed_data.pkl
+data/tmp/raw_data.pkl
+powerbi_transactions.csv
+powerbi_customer_summary.csv
+powerbi_monthly_revenue.csv
+globalretail_export.xlsx
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+
+# Environment variables
+.env
