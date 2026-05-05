@@ -1,0 +1,12 @@
+logs/
+data/
+*.log
+*.pkl
+.git
+.gitignore
+dags/
+docker-compose.yml
+requirements.txt
+build_dashboard.py
+export_for_powerbi.py
+.env

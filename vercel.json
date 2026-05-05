@@ -1,11 +1,16 @@
 {
   "buildCommand": "",
   "outputDirectory": ".",
-  "public": false,
-  "rewrites": [
+  "public": true,
+  "headers": [
     {
-      "source": "/(.*)",
-      "destination": "/globalretail_dashboard.html"
+      "source": "/globalretail_dashboard.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
+      ]
     }
   ]
 }
