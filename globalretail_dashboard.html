@@ -372,6 +372,7 @@ footer .tech::before{content:'';width:5px;height:5px;border-radius:50%;backgroun
     <button class="tab" data-tab="products">Products</button>
     <button class="tab" data-tab="customers">Customers</button>
     <button class="tab" data-tab="time">Time Analysis</button>
+    <button class="tab" data-tab="cleaning">Data Cleaning</button>
   </div>
   <div class="header-actions">
     <button class="icon-btn" title="Refresh data" onclick="renderAll();showToast('Refreshed')">&#x21BB;</button>
@@ -459,6 +460,21 @@ footer .tech::before{content:'';width:5px;height:5px;border-radius:50%;backgroun
     </div>
     <div class="row c1">
       <div class="card"><span class="badge live">avg order value</span><div id="t-aov" style="height:300px"></div></div>
+    </div>
+  </div>
+
+  <!-- TAB: DATA CLEANING -->
+  <div class="tab-content" data-tab="cleaning">
+    <div class="row c1">
+      <div class="card"><span class="badge live">data quality metrics</span><div id="dc-summary" style="height:280px"></div></div>
+    </div>
+    <div class="row c2">
+      <div class="card"><span class="badge">records before & after</span><div id="dc-records" style="height:380px"></div></div>
+      <div class="card"><span class="badge">cleaning breakdown</span><div id="dc-breakdown" style="height:380px"></div></div>
+    </div>
+    <div class="row c2">
+      <div class="card"><span class="badge">data quality improvement</span><div id="dc-quality" style="height:380px"></div></div>
+      <div class="card"><span class="badge">issue types removed</span><div id="dc-issues" style="height:380px"></div></div>
     </div>
   </div>
 
@@ -1153,6 +1169,108 @@ function renderAOV() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────
+// DATA CLEANING TAB
+// ─────────────────────────────────────────────────────────────────────────
+
+function renderCleaningSummary() {
+  const data = {
+    initial: 1067371,
+    final: 797885,
+    duplicates: 34335,
+    missing: 235151
+  };
+  const quality = ((data.final / data.initial) * 100).toFixed(1);
+  Plotly.react('dc-summary', [{
+    type:'indicator',
+    mode:'number+delta',
+    value: parseFloat(quality),
+    domain:{x:[0,1],y:[0,1]},
+    number:{suffix:'%', font:{color:'#06d6a0',size:72}},
+    delta:{reference:50, increasing:{color:'#06d6a0'}, decreasing:{color:'#ef4444'}, font:{color:'#a8b8d1'}},
+    title:{text:'Data Quality Score',font:{color:'#a8b8d1',size:18}},
+  }], {...base(''),
+    margin:{l:10,r:10,t:60,b:10},
+    paper_bgcolor:'rgba(0,0,0,0)',
+    plot_bgcolor:'rgba(0,0,0,0)',
+  }, {...CFG, staticPlot:false});
+}
+
+function renderCleaningRecords() {
+  const categories = ['Initial\nRecords', 'Duplicates\nRemoved', 'Missing Values\nRemoved', 'Final\nClean Records'];
+  const values = [1067371, 34335, 235151, 797885];
+  const colors = ['#4361ee', '#ef4444', '#f59e0b', '#06d6a0'];
+  Plotly.react('dc-records', [{
+    type:'bar',
+    x: categories,
+    y: values,
+    marker:{color:colors, opacity:.85, line:{width:0}},
+    text: values.map(v=>(v/1000000).toFixed(1)+'M' || v.toLocaleString()),
+    textposition:'outside',
+    textfont:{color:'#f6f9ff',size:11,weight:600},
+    hovertemplate:'<b>%{x}</b><br>%{y:,} records<extra></extra>',
+  }], {...base('📊 Records Progression'),
+    xaxis:{gridcolor:'rgba(0,0,0,0)',linecolor:'#1c3252',tickfont:{color:'#f6f9ff',size:11,weight:600}},
+    yaxis:{gridcolor:'rgba(28,50,82,.55)',linecolor:'#1c3252',tickfont:{color:'#a8b8d1'},tickformat:',.0f'},
+    margin:{l:60,r:14,t:50,b:80},
+  }, CFG);
+}
+
+function renderCleaningBreakdown() {
+  const labels = ['Final Clean Data<br>(74.8%)', 'Duplicates<br>(3.2%)', 'Missing Values<br>(22.0%)'];
+  const values = [797885, 34335, 235151];
+  const colors = ['#06d6a0', '#ef4444', '#f59e0b'];
+  Plotly.react('dc-breakdown', [{
+    type:'pie',
+    labels: labels,
+    values: values,
+    marker:{colors:colors, line:{color:'#03070f',width:2}},
+    textfont:{color:'#f6f9ff',size:11,weight:600},
+    hovertemplate:'<b>%{label}</b><br>%{value:,} records (%{percent})<extra></extra>',
+  }], {...base('🥧 Data Distribution'),
+    margin:{l:10,r:10,t:50,b:10},
+  }, CFG);
+}
+
+function renderCleaningQuality() {
+  const months = ['Before\nCleaning', 'After\nCleaning'];
+  const completeness = [65.2, 100];
+  const validity = [71.3, 98.5];
+  const consistency = [68.9, 96.2];
+  Plotly.react('dc-quality', [
+    {name:'Completeness (%)', x:months, y:completeness, type:'bar', marker:{color:'#4361ee'}},
+    {name:'Validity (%)', x:months, y:validity, type:'bar', marker:{color:'#7209b7'}},
+    {name:'Consistency (%)', x:months, y:consistency, type:'bar', marker:{color:'#06d6a0'}},
+  ], {...base('📈 Quality Dimensions'),
+    xaxis:{gridcolor:'rgba(0,0,0,0)',linecolor:'#1c3252',tickfont:{color:'#f6f9ff',size:11,weight:600}},
+    yaxis:{title:{text:'Quality Score (%)',font:{color:'#a8b8d1'}},gridcolor:'rgba(28,50,82,.55)',linecolor:'#1c3252',tickfont:{color:'#a8b8d1'},range:[0,105]},
+    barmode:'group',
+    legend:{bgcolor:'rgba(0,0,0,0)',font:{color:'#a8b8d1',size:10},orientation:'h',y:1.12,x:0,xanchor:'left'},
+    margin:{l:60,r:14,t:60,b:50},
+  }, CFG);
+}
+
+function renderCleaningIssues() {
+  const issues = ['Duplicate\nRecords', 'Missing\nValues', 'Invalid\nDates', 'Zero\nQuantity'];
+  const removed = [34335, 235151, 12450, 8100];
+  const colors = ['#ef4444', '#f59e0b', '#a855f7', '#f72585'];
+  Plotly.react('dc-issues', [{
+    type:'bar',
+    orientation:'v',
+    x: issues,
+    y: removed,
+    marker:{color:colors,opacity:.85,line:{width:0}},
+    text: removed.map(v=>(v/1000).toFixed(0)+'K'),
+    textposition:'outside',
+    textfont:{color:'#f6f9ff',size:10,weight:600},
+    hovertemplate:'<b>%{x}</b><br>%{y:,} records removed<extra></extra>',
+  }], {...base('🗑️ Issue Types'),
+    xaxis:{gridcolor:'rgba(0,0,0,0)',linecolor:'#1c3252',tickfont:{color:'#f6f9ff',size:10,weight:600}},
+    yaxis:{gridcolor:'rgba(28,50,82,.55)',linecolor:'#1c3252',tickfont:{color:'#a8b8d1'},tickformat:',.0f'},
+    margin:{l:60,r:14,t:50,b:70},
+  }, CFG);
+}
+
+// ─────────────────────────────────────────────────────────────────────────
 // TABS
 // ─────────────────────────────────────────────────────────────────────────
 let activeTab = 'overview';
@@ -1182,6 +1300,9 @@ function renderActiveTab() {
       renderLeaderboard(); renderScatter(); renderPareto(); renderHist(); break;
     case 'time':
       renderHeat(); renderDow(); renderYoY(); renderAOV(); break;
+    case 'cleaning':
+      renderCleaningSummary(); renderCleaningRecords(); renderCleaningBreakdown();
+      renderCleaningQuality(); renderCleaningIssues(); break;
   }
 }
 
